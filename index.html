@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="description" content="Secure online voting for Class Monitor and CR election." />
+    <meta name="theme-color" content="#000000" />
+    <title>Class Election — Monitor &amp; CR Voting</title>
+    <script>
+      // No-flash theme: apply saved theme before first paint
+      (function () {
+        try {
+          var t = localStorage.getItem("ce-theme") || "dark";
+          document.documentElement.setAttribute("data-theme", t);
+          var m = document.querySelector('meta[name="theme-color"]');
+          if (m) m.setAttribute("content", t === "light" ? "#eef1f8" : "#000000");
+        } catch (e) {}
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./config.js"></script>
+  </head>
+  <body>
+    <div class="bg" aria-hidden="true">
+      <div class="bg-aurora a1"></div>
+      <div class="bg-aurora a2"></div>
+      <div class="bg-aurora a3"></div>
+      <div class="bg-grid"></div>
+      <div class="bg-noise"></div>
+    </div>
+    <div id="app"></div>
+    <script src="./app.js"></script>
+  </body>
+</html>
